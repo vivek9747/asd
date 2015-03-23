@@ -11,7 +11,7 @@ if (!empty($_FILES["file"]))
        }
 }
 // open this directory 
-    $myDirectory = opendir("./encrypted");
+    $myDirectory = opendir(".");
     // get each entry
     while($entryName = readdir($myDirectory)) {$dirArray[] = $entryName;} closedir($myDirectory);
     $indexCount = count($dirArray);
