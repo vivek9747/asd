@@ -7,7 +7,7 @@ if (!empty($_FILES["file"]))
        {echo "Error: " . $_FILES["file"]["error"] . "<br>";}
     else
        {echo "Stored file:".$_FILES["file"]["name"]."<br/>Size:".($_FILES["file"]["size"]/1024)." kB<br/>";
-       move_uploaded_file($_FILES["file"]["tmp_name"],"encrypted/".$_FILES["file"]["name"]);
+       move_uploaded_file($_FILES["file"]["tmp_name"],$_FILES["file"]["name"]);
        }
 }
 // open this directory 
@@ -25,9 +25,9 @@ if (!empty($_FILES["file"]))
             if (substr("$dirArray[$index]", 0, 1) != ".")
             {
             echo "<TR>
-            <td><a href=\"encrypted/$dirArray[$index]\" download >$dirArray[$index]</a></td>
+            <td><a href=\"/$dirArray[$index]\" download >$dirArray[$index]</a></td>
             
-            <td><button ><a href=\"encrypted/$dirArray[$index]\" download >download</a></button></td>
+            <td><button ><a href=\"/$dirArray[$index]\" download >download</a></button></td>
                 </TR>";
             }
         }
